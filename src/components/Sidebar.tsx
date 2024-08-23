@@ -1,5 +1,5 @@
 import Image from "next/image";
-import { IoBrowsers, IoCalculator, IoLogoReact } from 'react-icons/io5';
+import { IoBrowsers, IoCalculator, IoFootball, IoLogoReact } from 'react-icons/io5';
 import { SidebarMenuItem } from "./SidebarMenuItem";
 
 const menuItems = [
@@ -14,13 +14,18 @@ const menuItems = [
     icon: <IoCalculator size={30} />,
     title: 'Counter',
     subTitle: 'Contador Client Side'
+  },
+  {
+    path: '/dashboard/pokemons',
+    icon: <IoFootball size={30} />,
+    title: 'Pokemons',
+    subTitle: 'Generación Estática'
   }
-
 ];
 
 export const Sidebar = () => {
   return (
-    <div id="menu" className="bg-gray-900 min-h-screen z-10 text-slate-300 w-[400px] left-0 h-screen overflow-y-scroll">
+    <div id="menu" className="bg-gray-900 min-h-screen z-10 text-slate-300 w-[400px] left-0 overflow-y-scroll">
       <div id="logo" className="my-4 px-6">
         <h1 className="flex items-center text-lg md:text-2xl font-bold text-white">
           <IoLogoReact className="mr-2" />
@@ -37,7 +42,9 @@ export const Sidebar = () => {
               src="https://images.unsplash.com/photo-1542909168-82c3e7fdca5c"
               width={50}
               height={50}
-              alt="" />
+              alt="User photo"
+              priority
+             />
           </span>
           <span className="text-sm md:text-base font-bold">
             Jeferson Hernandez
